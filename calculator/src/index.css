@@ -1,16 +1,33 @@
-/* App.css */
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: #000;
+  color: #fff;
+}
 
 .container {
-  /* Container styles */
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
 }
 
 .card {
   background: var(--color-light);
   padding: calc(4 * var(--size-bezel));
-  margin-top: calc(4 * var(--size-bezel));
   border-radius: var(--size-radius);
   border: 3px solid var(--color-signal);
   box-shadow: .5rem .5rem 0 var(--color-signal);
+  width: 100%; /* Ensure the card takes full width of the container */
 }
 
 .card-body {
@@ -18,122 +35,117 @@
   color: var(--color-light);
   border-color: var(--color-signal);
   box-shadow: .5rem .5rem 0 var(--color-signal);
+  width: 100%; /* Ensure the card body takes full width of the card */
 }
 
 .input-container {
-  /* Input container styles */
+  width: 100%; /* Ensure input container takes full width of the card body */
+  margin-bottom: 20px; /* Spacing between input containers */
 }
 
 .input {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
-  margin-left: 2rem;
-  margin-top: 0.7rem;
-  display: block;
-  transition: all 0.3s;
-  transform: translateY(0rem);}
-
-.input-1, .input-2, .input-result {
+  background-color: #15172b;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 20px;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 20px; /* Add spacing for specific inputs */
 }
+
 .button-container {
-  /* Button container styles */
+  display: flex;
+  justify-content: space-between;
+  width: 100%; /* Ensure button container takes full width of the card body */
 }
 
 button {
-  position: relative;
-  background: #444;
+  width: 50px;
+  height: 56px;
+  font-family: 'Bebas Neue', cursive;
+  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+  border: 0;
   color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: none;
-  letter-spacing: 0.1rem;
-  font-size: 1rem;
-  padding: 1rem 3rem;
-  transition: 0.2s;
+  letter-spacing: 10px;
+  line-height: 56px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  border-radius: 5px;
+  margin-right: 10px; /* Adjust spacing between buttons */
+  margin-top: 20px; /* Adjust spacing above buttons */
+}
+
+button:last-child {
+  margin-right: 0; /* Remove margin for the last button */
 }
 
 button:hover {
-  letter-spacing: 0.2rem;
-  padding: 1.1rem 3.1rem;
-  background: var(--clr);
-  color: var(--clr);
-  /* box-shadow: 0 0 35px var(--clr); */
-  animation: box 3s infinite;
+  color: #000;
 }
 
-button::before {
+span {
+  transition: all 0.7s;
+  z-index: -1;
+}
+
+button .first {
   content: "";
   position: absolute;
-  inset: 2px;
-  background: #272822;
+  right: 50%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: #ffa500;
 }
 
-button span {
-  position: relative;
-  z-index: 1;
-}
-button i {
-  position: absolute;
-  inset: 0;
-  display: block;
+button:hover .first {
+  top: 0;
+  right: 0;
 }
 
-button i::before {
+button .second {
   content: "";
   position: absolute;
-  width: 10px;
-  height: 2px;
-  left: 80%;
-  top: -2px;
-  border: 2px solid var(--clr);
-  background: #272822;
-  transition: 0.2s;
+  left: 25%;
+  top: -100%;
+  height: 100%;
+  width: 25%;
+  background: #ffa500;
 }
 
-button:hover i::before {
-  width: 15px;
-  left: 20%;
-  animation: move 3s infinite;
+button:hover .second {
+  top: 0;
+  left: 50%;
 }
 
-button i::after {
+button .third {
   content: "";
   position: absolute;
-  width: 10px;
-  height: 2px;
-  left: 20%;
-  bottom: -2px;
-  border: 2px solid var(--clr);
-  background: #272822;
-  transition: 0.2s;
+  left: 70%;
+  height: 100%;
+  top: 100%;
+  width: 25%;
+  background: #ffa500;
 }
 
-button:hover i::after {
-  width: 15px;
-  left: 80%;
-  animation: move 3s infinite;
+button:hover .third {
+  top: 0;
+  left: 25%;
 }
 
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+button .fourth {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background: #ffa500;
 }
 
-@keyframes box {
-  0% {
-    box-shadow: #27272c;
-  }
-  50% {
-    box-shadow: 0 0 25px var(--clr);
-  }
-  100% {
-    box-shadow: #27272c;
-  }
+button:hover .fourth {
+  top: 0;
+  left: 0;
 }
